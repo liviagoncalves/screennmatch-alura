@@ -1,4 +1,6 @@
 import br.com.livia.screenmatch.calculos.CalculadoraDeTempo;
+import br.com.livia.screenmatch.calculos.FiltroDeRecomendacao;
+import br.com.livia.screenmatch.modelos.Episodio;
 import br.com.livia.screenmatch.modelos.Filme;
 import br.com.livia.screenmatch.modelos.Serie;
 
@@ -36,6 +38,15 @@ public class Principal {
         calculadora.inclui(meuFilme2);
         calculadora.inclui(serie);
         System.out.println(calculadora.getTempoTotal());
+
+        FiltroDeRecomendacao filtro = new FiltroDeRecomendacao();
+        filtro.filtra(meuFilme);
+
+        Episodio episodio = new Episodio();
+        episodio.setNumero(1);
+        episodio.setSerie(serie);
+        episodio.setTotalVisualizacoes(300);
+        filtro.filtra(episodio);
 
     }
 }

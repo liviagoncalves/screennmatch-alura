@@ -1,6 +1,8 @@
 package br.com.livia.screenmatch.modelos;
 
-public class Serie extends Titulo{
+import br.com.livia.screenmatch.calculos.Classificavel;
+
+public class Serie extends Titulo {
     private int temporadas;
     private boolean ativa;
     private int episodiosPorTemportada;
@@ -41,4 +43,5 @@ public class Serie extends Titulo{
     public int getDuracaoEmMinutos(){
         return temporadas * episodiosPorTemportada * minutosPorEpisodio;
     }
+
 }
